@@ -44,13 +44,13 @@ const notesStore = create((set) => ({
 		const res = await axios.post("http://localhost:3000/notes", createForm);
 
 		notesStore.getState().fetchNotes();
-		// set({
-		// 	notes: [...notes, res.data.note],
-		// 	createForm: {
-		// 		title: "",
-		// 		body: "",
-		// 	},
-		// });
+		set({
+			// notes: [...notes, res.data.note],
+			createForm: {
+				title: "", 
+				body: "",
+			},
+		});
 	},
 
 	deleteNote: async (_id) => {
